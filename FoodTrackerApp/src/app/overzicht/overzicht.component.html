@@ -1,0 +1,43 @@
+<app-header></app-header>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+<main class="section-container">
+    <div class="section-container">
+        <div class="center-div">
+            <button class="generic-button">Left</button>
+            <button class="generic-button">Woensdag 28 Oktober</button>
+            <button class="generic-button">Right</button>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="row-container">
+            <div class="col-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Producten / Maaltijden</th>
+                            <th>KCal</th>
+                            <th>Eiwitten</th>
+                            <th>Koolhydraten</th>
+                            <th>Vetten</th>
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let row of rows">
+                        <td>{{ currentMacroData.carbs }} </td>
+                        <td>{{ currentMacroData.protein }} </td>
+                        <td>{{ currentMacroData.fats }} </td>
+                    </tr>
+                    <tbody>
+                    </tbody>
+                </table>
+                <button class="generic-button" (click)="addRowWithDummyData()">Add dummy data</button>
+            </div>
+            <div class="col-container">
+                <apx-chart [series]="series" [chart]="chart" [title]="title" [labels]="labels" [legend]="legend"
+                    [colors]="colors" [stroke]="stroke"></apx-chart>
+            </div>
+        </div>
+    </div>
+
+</main>

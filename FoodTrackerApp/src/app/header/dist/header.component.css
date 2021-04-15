@@ -1,0 +1,38 @@
+.header-container {
+  width: 100%;
+  margin: 0 0;
+  min-height: 1em;
+}
+
+.header-container img {
+  margin: 2px;
+  margin-left: 5%;
+  width: 75px;
+  height: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff6361;
+  padding: 0.5em;
+}
+header a {
+  color: white;
+  text-decoration: none;
+}
+header img {
+  height: clamp(60px, 5vw, 100px);
+}
+header a.logo {
+  height: max-content;
+  font-weight: bold;
+  size: 10px;
+}
+header nav a {
+  padding: 2em;
+}
+header nav a:hover {
+  background: #ff312e;
+}

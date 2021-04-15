@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<main>
+    <div class="section-container">
+        <div class="row-container">
+            <div class="col-container">
+                <div>
+                    <table class="styled-table" id="producten-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>KCal</th>
+                                <th>Eiwitten</th>
+                                <th>Koolhydraten</th>
+                                <th>Vetten</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of datum$ | async; trackBy: getIndex">
+                                <td>{{ data.product }} </td>
+                                <td>{{ data.kcal }} </td>
+                                <td>{{ data.eiwitten }} </td>
+                                <td>{{ data.koolhydraten }} </td>
+                                <td>{{ data.vetten }} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <form [formGroup]="theForm" class="col-container">
+                <input class="generic-form" formControlName="product" placeholder="Product" required>
+                <input class="generic-form" formControlName="kcal" placeholder="KCal" required>
+                <input class="generic-form" formControlName="eiwitten" placeholder="Eiwitten" required>
+                <input class="generic-form" formControlName="koolhydraten" placeholder="Koolhydraten" required>
+                <input class="generic-form" formControlName="vetten" placeholder="Vetten" required>
+                <button class="generic-button" (click)="addData()" [disabled]="theForm.invalid">Voeg product toe</button>
+            </form>
+        </div>
+    </div>
+</main>

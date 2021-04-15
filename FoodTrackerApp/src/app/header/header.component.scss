@@ -1,0 +1,45 @@
+$primaryColor: #ff6361;
+
+.header-container {
+  width: 100%;
+  margin: 0 0;
+  min-height: 1em;
+}
+
+.header-container img {
+  margin: 2px;
+  margin-left: 5%;
+  width: 75px;
+  height: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $primaryColor;
+  padding: 0.5em;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  img {
+    height: clamp(60px, 5vw, 100px);
+  }
+  a.logo {
+    height: max-content;
+    font-weight: bold;
+    size: 10px;
+  }
+
+  nav {
+    a {
+      padding: 2em;
+
+      &:hover {
+        background: darken($primaryColor, 10%);
+      }
+    }
+  }
+}
