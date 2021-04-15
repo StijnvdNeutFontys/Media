@@ -39,7 +39,8 @@ export class OverzichtComponent implements OnInit {
   stroke: ApexStroke;
 
   totalMacroData: MacroData;
-  currentMacroData: MacroData;
+  macroData: MacroData[];
+  counter: number;
 
   ngOnInit(): void {
 
@@ -49,11 +50,7 @@ export class OverzichtComponent implements OnInit {
       fats: 0
     };
 
-    this.currentMacroData = {
-      carbs: 0,
-      protein: 0,
-      fats: 0
-    };
+    this.macroData = [];
 
     this.initializeChartOptions();
   }
@@ -91,9 +88,15 @@ export class OverzichtComponent implements OnInit {
 
   public addRowWithDummyData(): void {
 
-    this.currentMacroData.carbs = Math.round(Math.random() * 100);
-    this.currentMacroData.protein = Math.round(Math.random() * 100);
-    this.currentMacroData.fats = Math.round(Math.random() * 100);
+
+    this.macroData[this.counter] = {
+      carbs: Math.round(Math.random() * 100),
+      protein: Math.round(Math.random() * 100),
+      fats: Math.round(Math.random() * 100),
+
+    }
+
+    this.counter++;
 
     this.rows.push(this.rows.length);
 
