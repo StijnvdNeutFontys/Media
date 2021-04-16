@@ -23,10 +23,10 @@
                             <th>Vetten</th>
                         </tr>
                     </thead>
-                    <tr *ngFor="let row of rows">
-                        <td>{{ macroData.carbs }} </td>
-                        <td>{{ macroData.protein }} </td>
-                        <td>{{ macroData.fats }} </td>
+                    <tr *ngFor="let data of data">
+                        <td>{{ data.carbs }} </td>
+                        <td>{{ data.protein }} </td>
+                        <td>{{ data.fats }} </td>
                     </tr>
                     <tbody>
                     </tbody>

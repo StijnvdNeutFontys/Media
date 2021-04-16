@@ -13,11 +13,13 @@ var overzicht_component_1 = require("./overzicht/overzicht.component");
 var producten_component_1 = require("./producten/producten.component");
 var maaltijden_component_1 = require("./maaltijden/maaltijden.component");
 var login_component_1 = require("./login/login.component");
+var data_table_component_1 = require("./data-table/data-table.component");
 var routes = [
     { path: 'overzicht', component: overzicht_component_1.OverzichtComponent },
     { path: 'producten', component: producten_component_1.ProductenComponent },
     { path: 'maaltijden', component: maaltijden_component_1.MaaltijdenComponent },
     { path: 'login', component: login_component_1.LoginComponent },
+    { path: 'data-table', component: data_table_component_1.DataTableComponent },
     { path: '', pathMatch: 'full', redirectTo: '/login' }
 ];
 var AppRoutingModule = /** @class */ (function () {

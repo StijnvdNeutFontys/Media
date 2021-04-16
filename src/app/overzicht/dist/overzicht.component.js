@@ -18,7 +18,6 @@ var OverzichtComponent = /** @class */ (function () {
             protein: 0,
             fats: 0
         };
-        this.macroData = [];
         this.initializeChartOptions();
     };
     OverzichtComponent.prototype.initializeChartOptions = function () {
@@ -45,11 +44,12 @@ var OverzichtComponent = /** @class */ (function () {
         };
     };
     OverzichtComponent.prototype.addRowWithDummyData = function () {
-        this.macroData[this.counter] = {
+        this.data[this.counter] = {
             carbs: Math.round(Math.random() * 100),
             protein: Math.round(Math.random() * 100),
             fats: Math.round(Math.random() * 100)
         };
+        this.data.pipe();
         this.counter++;
         this.rows.push(this.rows.length);
     };

@@ -1,5 +1,34 @@
-//$primaryColor: rgb(255,83,55);
-$primaryColor: #ff6361;
+$primaryColor: #BB85FD;
+$backgroundColor: #212121;
+
+@import "~@angular/material/theming";
+@include mat-core();
+$angular-primary: mat-palette($mat-teal, 500, 100, 900);
+$angular-accent: mat-palette($mat-pink, A200, A100, A400);
+$angular-warn: mat-palette($mat-red);
+$angular-default-theme: mat-light-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+@include angular-material-theme($angular-default-theme);
+
+$angular-dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+.darkMode {
+  @include angular-material-color($angular-dark-theme);
+}
 
 body {
     margin: 0;
@@ -8,13 +37,13 @@ body {
 }
 
 main {
-    background-color: #121212;
+    background-color: $backgroundColor;
     height: calc(100vh - 123px);
 }
 
 .flex-container {
     display: flex;
-    background-color: #121212;
+    background-color: $backgroundColor;
     color: white;
     height: 100vh;
     align-items: center;
@@ -24,7 +53,7 @@ main {
 .section-container {
     display: flex;
     flex-direction: column;
-    background-color: #121212;
+    background-color: $backgroundColor;
     color: white;
 }
 
@@ -107,6 +136,7 @@ main {
     th {
         background-color: $primaryColor;
         padding: 10px;
+        font-weight: normal;
     }
 
     td {
@@ -117,3 +147,5 @@ main {
         background-color:#1c1c1c;
     }
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

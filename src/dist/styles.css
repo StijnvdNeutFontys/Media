@@ -100,3 +100,12 @@ main {
 .styled-table tr:nth-child(even) {
   background-color: #1c1c1c;
 }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

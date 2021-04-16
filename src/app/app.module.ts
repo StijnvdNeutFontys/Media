@@ -11,6 +11,11 @@ import { MaaltijdenComponent } from './maaltijden/maaltijden.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataTableComponent } from './data-table/data-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     OverzichtComponent,
     ProductenComponent,
     MaaltijdenComponent,
-    HeaderComponent
+    HeaderComponent,
+    DataTableComponent
   ],
   exports: [
     RouterModule
@@ -28,7 +34,11 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

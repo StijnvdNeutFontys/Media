@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<main>
+  <div class="section-container">
+
+    <div class="row-container">
+
+      <div class="mat-elevation-z8 data-table darkMode">
+        <table mat-table class="full-width-table" matSort aria-label="Elements">
+          <!-- Id Column -->
+          <ng-container matColumnDef="product">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Product</th>
+            <td mat-cell *matCellDef="let row">{{row.product}}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="carbs">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Koolhydraten</th>
+            <td mat-cell *matCellDef="let row">{{row.carbs}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="protein">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Eiwitten</th>
+            <td mat-cell *matCellDef="let row">{{row.protein}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="fats">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Vetten</th>
+            <td mat-cell *matCellDef="let row">{{row.fats}}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="50"
+          [pageSizeOptions]="[25, 50, 100, 250]">
+        </mat-paginator>
+      </div>
+
+    </div>
+
+    <div class="row-container">
+
+      <apx-chart [series]="series" [chart]="chart" [title]="title" [labels]="labels" [legend]="legend"
+      [colors]="colors" [stroke]="stroke"></apx-chart>
+
+    </div>
+
+  </div>
+</main>

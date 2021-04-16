@@ -14,6 +14,7 @@ import {
   NgApexchartsModule,
   ApexDataLabels
 } from "ng-apexcharts";
+import { Observable } from 'rxjs';
 
 export interface MacroData {
   carbs: number;
@@ -29,6 +30,7 @@ export interface MacroData {
 export class OverzichtComponent implements OnInit {
 
   public readonly rows: number[] = [];
+  public data: Observable<MacroData[]>;
 
   series: number[];
   chart: ApexChart;
@@ -49,8 +51,6 @@ export class OverzichtComponent implements OnInit {
       protein: 0,
       fats: 0
     };
-
-    this.macroData = [];
 
     this.initializeChartOptions();
   }
@@ -89,12 +89,14 @@ export class OverzichtComponent implements OnInit {
   public addRowWithDummyData(): void {
 
 
-    this.macroData[this.counter] = {
+    this.data[this.counter] = {
       carbs: Math.round(Math.random() * 100),
       protein: Math.round(Math.random() * 100),
       fats: Math.round(Math.random() * 100),
 
     }
+
+    this.data.pipe()
 
     this.counter++;
 
